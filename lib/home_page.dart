@@ -10,8 +10,8 @@ class MyHome extends StatefulWidget {
 
 class _MyHomeState extends State<MyHome> {
   //variables
-  TextEditingController mail = TextEditingController();
-  TextEditingController password= TextEditingController();
+  TextEditingController mailController = TextEditingController();
+  TextEditingController passwordController= TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -36,14 +36,15 @@ class _MyHomeState extends State<MyHome> {
           ),
 
           TextField(
-            controller: mail,
+            controller: mailController,
             decoration: const InputDecoration(
               hintText: "Entrer votre adresse"
             ),
           ),
 
           TextField(
-            controller: password,
+            obscureText: true,
+            controller: passwordController,
             decoration: const InputDecoration(
                 hintText: "Entrer votre password"
             ),
@@ -62,7 +63,7 @@ class _MyHomeState extends State<MyHome> {
                 //naviguer vers la page dashboard
                 Navigator.push(context, MaterialPageRoute(
                     builder: (context){
-                      return DashBoard();
+                      return DashBoard(password: passwordController.text,);
                     }
                 ));
               },

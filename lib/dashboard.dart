@@ -1,7 +1,12 @@
+import 'package:firapplicationdigtitalcampus/view/list_personne.dart';
+import 'package:firapplicationdigtitalcampus/view/messagerie.dart';
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class DashBoard extends StatefulWidget {
-  const DashBoard({Key? key}) : super(key: key);
+  //attributs
+  String password;
+  DashBoard({Key? key , required String this.password}) : super(key: key);
 
   @override
   State<DashBoard> createState() => _DashBoardState();
@@ -37,8 +42,8 @@ class _DashBoardState extends State<DashBoard> {
             icon: Icon(Icons.person)
           ),
           BottomNavigationBarItem(
-              icon: Icon(Icons.list_alt),
-            label: "Listes",
+              icon: FaIcon(FontAwesomeIcons.comment),
+            label: "Messagerie",
           )
         ],
       ),
@@ -55,9 +60,9 @@ class _DashBoardState extends State<DashBoard> {
         });
 
       },
-      children: const [
-        Text("première page"),
-        Text("Deuxième page")
+      children:  [
+        ListPersonne(password: widget.password),
+        Messagerie(),
       ],
     );
   }
