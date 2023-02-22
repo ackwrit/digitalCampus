@@ -1,3 +1,4 @@
+import 'package:file_picker/file_picker.dart';
 import 'package:firapplicationdigtitalcampus/librairie/constatnte.dart';
 import 'package:flutter/material.dart';
 
@@ -9,6 +10,17 @@ class MyDrawer extends StatefulWidget {
 }
 
 class _MyDrawerState extends State<MyDrawer> {
+  //attributs
+
+
+  //fonctions
+  recupImage() async{
+    FilePickerResult? resultat = await FilePicker.platform.pickFiles(
+      withData: true,
+      type: FileType.image
+    );
+
+  }
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -18,6 +30,7 @@ class _MyDrawerState extends State<MyDrawer> {
           InkWell(
             onTap: (){
               print("j'ai tapé sur l'image");
+              recupImage();
             },
             child: CircleAvatar(
               radius: 60,
