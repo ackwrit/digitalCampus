@@ -2,6 +2,7 @@ import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:file_picker/file_picker.dart';
+import 'package:firapplicationdigtitalcampus/controller/firestorehelper.dart';
 import 'package:firapplicationdigtitalcampus/librairie/constatnte.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
@@ -39,9 +40,20 @@ class _MyDrawerState extends State<MyDrawer> {
 
             TextButton(
               onPressed: (){
+                FirestoreHelper().stockageImage(datasImage!, nameImage!).then((value) {
+                  setState((){
+                    urlImage = value;
+                  });
+                  Map<String,dynamic> map = {
+                    "AVATAR":urlImage,
+                  };
+                  FirestoreHelper().updateUsers(monIdentite.id, map);
+
+                  Navigator.pop(context);
+                });
 
 
-                Navigator.pop(context);
+
               },
               child: const Text("Accepter"),
             ),
