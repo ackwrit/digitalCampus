@@ -1,5 +1,6 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firapplicationdigtitalcampus/controller/firestorehelper.dart';
+import 'package:firapplicationdigtitalcampus/librairie/constatnte.dart';
 import 'package:firapplicationdigtitalcampus/model/Utilisateur.dart';
 import 'package:flutter/material.dart';
 
@@ -27,12 +28,18 @@ class _ListPersonneState extends State<ListPersonne> {
                 itemCount: documents.length,
                   itemBuilder: (context,index){
                   Utilisateur otherUser = Utilisateur(documents[index]);
-                  return ListTile(
-                    leading: CircleAvatar(
-                      backgroundImage: NetworkImage(otherUser.avatar!),
-                    ),
-                    title: Text(otherUser.nomComplet),
-                  );
+                  if(monIdentite.id == otherUser.id)
+                    {
+                      return Container();
+                    }
+                  else {
+                    return ListTile(
+                      leading: CircleAvatar(
+                        backgroundImage: NetworkImage(otherUser.avatar!),
+                      ),
+                      title: Text(otherUser.nomComplet),
+                    );
+                  }
 
                   }
               );

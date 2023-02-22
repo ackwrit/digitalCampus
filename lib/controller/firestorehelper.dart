@@ -81,6 +81,13 @@ deleteUser(){
     return url;
  }
 
+ //vérifier si l'utlisateur est déja loggé
+ Stream<bool> checkLogin() {
+    return  auth.authStateChanges().map((event){
+      return event != null;
+    });
+ }
+
 
 
 

@@ -44,6 +44,7 @@ class _MyDrawerState extends State<MyDrawer> {
                 FirestoreHelper().stockageImage(datasImage!, nameImage!).then((value) {
                   setState((){
                     urlImage = value;
+                    monIdentite.avatar = urlImage;
                   });
                   Map<String,dynamic> map = {
                     "AVATAR":urlImage,
