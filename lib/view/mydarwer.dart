@@ -40,6 +40,7 @@ class _MyDrawerState extends State<MyDrawer> {
 
             TextButton(
               onPressed: (){
+                //récupération du lien de l'image
                 FirestoreHelper().stockageImage(datasImage!, nameImage!).then((value) {
                   setState((){
                     urlImage = value;
@@ -47,6 +48,7 @@ class _MyDrawerState extends State<MyDrawer> {
                   Map<String,dynamic> map = {
                     "AVATAR":urlImage,
                   };
+                  //mise à jour de l'utilisateur
                   FirestoreHelper().updateUsers(monIdentite.id, map);
 
                   Navigator.pop(context);
