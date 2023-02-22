@@ -15,10 +15,24 @@ class _MyDrawerState extends State<MyDrawer> {
         padding: const EdgeInsets.all(10),
       child: Column(
         children: [
-          CircleAvatar(
-            radius: 60,
-            backgroundImage: NetworkImage(monIdentite.avatar!),
+          InkWell(
+            onTap: (){
+              print("j'ai tapé sur l'image");
+            },
+            child: CircleAvatar(
+              radius: 60,
+              backgroundImage: NetworkImage(monIdentite.avatar!,
+              ),
+
+            ),
           ),
+
+
+          Text(monIdentite.nomComplet),
+
+          Text(monIdentite.mail),
+
+          Text(monIdentite.convertirGenreEnString())
         ],
       ),
     );

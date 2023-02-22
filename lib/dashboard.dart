@@ -29,6 +29,7 @@ class _DashBoardState extends State<DashBoard> {
       drawer: Container(
         width: MediaQuery.of(context).size.width/2,
         height:MediaQuery.of(context).size.height,
+        color: Colors.white,
         child : MyDrawer()
       ),
       appBar: AppBar(),
