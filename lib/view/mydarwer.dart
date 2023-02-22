@@ -1,3 +1,5 @@
+import 'dart:typed_data';
+
 import 'package:file_picker/file_picker.dart';
 import 'package:firapplicationdigtitalcampus/librairie/constatnte.dart';
 import 'package:flutter/material.dart';
@@ -11,15 +13,28 @@ class MyDrawer extends StatefulWidget {
 
 class _MyDrawerState extends State<MyDrawer> {
   //attributs
+  String? nameImage;
+  String? urlImage;
+  Uint8List? datasImage;
 
 
   //fonctions
+  popImage(){
+
+  }
+
+
   recupImage() async{
     //récupérartion image
     FilePickerResult? resultat = await FilePicker.platform.pickFiles(
       withData: true,
       type: FileType.image
     );
+    if (resultat != null){
+      nameImage = resultat.files.first.name;
+      datasImage = resultat.files.first.bytes;
+      popImage();
+    }
 
   }
   @override
