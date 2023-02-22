@@ -1,0 +1,82 @@
+{
+  "project_info": {
+    "project_number": "537669474731",
+    "project_id": "checkml",
+    "storage_bucket": "checkml.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:537669474731:android:3de0f04d63654db47b9aee",
+        "android_client_info": {
+          "package_name": "com.example.machinelearning"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "537669474731-pjdsfcvkc1u09blhmrfqb83f4didajfi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjGxjxvjQHb0UgvewzmukavL9Md1aOv1M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "537669474731-pjdsfcvkc1u09blhmrfqb83f4didajfi.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "537669474731-3f3knpuj024rnlvs5ji43phq8cu0kre6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.machinelearning"
+              }
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:537669474731:android:27fbbded6b36290c7b9aee",
+        "android_client_info": {
+          "package_name": "com.lightphoenix.firapplicationdigtitalcampus"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "537669474731-pjdsfcvkc1u09blhmrfqb83f4didajfi.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDjGxjxvjQHb0UgvewzmukavL9Md1aOv1M"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "537669474731-pjdsfcvkc1u09blhmrfqb83f4didajfi.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "537669474731-3f3knpuj024rnlvs5ji43phq8cu0kre6.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.example.machinelearning"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

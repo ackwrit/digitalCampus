@@ -1,4 +1,5 @@
 import 'package:firapplicationdigtitalcampus/dashboard.dart';
+import 'package:firapplicationdigtitalcampus/view/Inscription.dart';
 import 'package:flutter/material.dart';
 
 class MyHome extends StatefulWidget {
@@ -73,6 +74,11 @@ class _MyHomeState extends State<MyHome> {
 
           TextButton(
               onPressed: (){
+                Navigator.push(context, MaterialPageRoute(
+                    builder: (context){
+                      return Inscription();
+                    }
+                ));
 
               },
               child: const Text("Inscription")

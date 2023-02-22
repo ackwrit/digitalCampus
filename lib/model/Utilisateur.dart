@@ -1,3 +1,4 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firapplicationdigtitalcampus/librairie/constatnte.dart';
 import 'package:flutter/material.dart';
 
@@ -7,7 +8,7 @@ class Utilisateur {
   late String nom;
   late String prenom;
   late String mail;
-  late String avatar;
+  String? avatar;
   late DateTime birthday;
   late Genre sexe;
 
@@ -17,7 +18,27 @@ class Utilisateur {
   }
 
   //constructeur
-  Utilisateur(){
+  Utilisateur(DocumentSnapshot snapshot){
+    id = snapshot.id;
+    Map<String,dynamic> map = snapshot.data() as Map<String,dynamic>;
+    nom = map["NOM"];
+    prenom = map["PRENOM"];
+    mail = map["MAIL"];
+    String? avatarProvisoire = map["AVATAR"];
+    //vérification de la valeur de l'avatar
+    if(avatarProvisoire == null){
+      //affection à notre image par défaut
+      avatar = defaultImage;
+    }
+    else
+      {
+        //affection du lien de l'avatar de l'utilisateur
+        avatar = avatarProvisoire;
+      }
+    Timestamp dateProvisoire = map["BIRTHDAY"];
+    birthday = dateProvisoire.toDate();
+    String sexeProvisoire= map["SEXE"] ;
+    convertirStringEnGenre(sexeProvisoire);
 
   }
 
