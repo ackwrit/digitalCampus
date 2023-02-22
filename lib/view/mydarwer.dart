@@ -22,6 +22,7 @@ class _MyDrawerState extends State<MyDrawer> {
 
   //fonctions
   popImage(){
+    //mise en place du Pop
     showDialog(context: context,
         builder: (context){
       if(Platform.isIOS){
