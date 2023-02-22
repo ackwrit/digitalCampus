@@ -1,5 +1,6 @@
 import 'package:firapplicationdigtitalcampus/view/list_personne.dart';
 import 'package:firapplicationdigtitalcampus/view/messagerie.dart';
+import 'package:firapplicationdigtitalcampus/view/mydarwer.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
