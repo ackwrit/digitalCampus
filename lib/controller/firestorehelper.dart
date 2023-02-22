@@ -1,6 +1,8 @@
 
 
 
+import 'dart:typed_data';
+
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firapplicationdigtitalcampus/librairie/constatnte.dart';
 import 'package:firapplicationdigtitalcampus/model/Utilisateur.dart';
@@ -71,6 +73,13 @@ deleteUser(){
 
 
 //stockage d'une image
+ Future <String> stockageImage(Uint8List bytesImage, String nameImage) async{
+    String url = "";
+    TaskSnapshot tasksnapshot = await storage.ref("images/$nameImage").putData(bytesImage);
+    url = await tasksnapshot.ref.getDownloadURL();
+
+    return url;
+ }
 
 
 
