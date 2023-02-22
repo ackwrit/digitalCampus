@@ -49,7 +49,27 @@ class _MyDrawerState extends State<MyDrawer> {
       }
       else
         {
+          return AlertDialog(
+            title: const Text("Mon image"),
+            content: Image.memory(datasImage!),
+            actions: [
+              TextButton(
+                onPressed: (){
+                  Navigator.pop(context);
+                },
+                child: const Text("Refuser"),
+              ),
 
+              TextButton(
+                onPressed: (){
+
+
+                  Navigator.pop(context);
+                },
+                child: const Text("Accepter"),
+              ),
+            ],
+          );
         }
         }
     );
