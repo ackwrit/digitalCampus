@@ -15,6 +15,7 @@ class _MyDrawerState extends State<MyDrawer> {
 
   //fonctions
   recupImage() async{
+    //récupérartion image
     FilePickerResult? resultat = await FilePicker.platform.pickFiles(
       withData: true,
       type: FileType.image
