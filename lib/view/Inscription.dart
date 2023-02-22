@@ -1,4 +1,6 @@
 import 'package:firapplicationdigtitalcampus/controller/firestorehelper.dart';
+import 'package:firapplicationdigtitalcampus/dashboard.dart';
+import 'package:firapplicationdigtitalcampus/librairie/constatnte.dart';
 import 'package:flutter/material.dart';
 
 class Inscription extends StatefulWidget {
@@ -67,6 +69,14 @@ class _InscriptionState extends State<Inscription> {
           ElevatedButton(
               onPressed: (){
                 FirestoreHelper().createUtilisateur(nomController.text, prenomController.text, mailController.text, passwordController.text).then((utilisateur){
+                  setState((){
+                    monIdentite = utilisateur;
+                  });
+                  Navigator.push(context, MaterialPageRoute(
+                      builder: (context){
+                        return DashBoard(password: passwordController.text);
+                      }
+                  ));
 
                 }).catchError((onError){
                   print(onError);

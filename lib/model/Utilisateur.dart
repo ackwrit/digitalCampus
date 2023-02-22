@@ -9,7 +9,7 @@ class Utilisateur {
   late String prenom;
   late String mail;
   String? avatar;
-  late DateTime birthday;
+  DateTime? birthday;
   late Genre sexe;
 
 
@@ -35,10 +35,17 @@ class Utilisateur {
         //affection du lien de l'avatar de l'utilisateur
         avatar = avatarProvisoire;
       }
-    Timestamp dateProvisoire = map["BIRTHDAY"];
-    birthday = dateProvisoire.toDate();
+    Timestamp? dateProvisoire = map["BIRTHDAY"];
+    if(dateProvisoire == null){
+      birthday = DateTime.now();
+    }
+    else
+      {
+        birthday = dateProvisoire.toDate();
+      }
+
     String sexeProvisoire= map["SEXE"] ;
-    convertirStringEnGenre(sexeProvisoire);
+    sexe = convertirStringEnGenre(sexeProvisoire);
 
   }
 
