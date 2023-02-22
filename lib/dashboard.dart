@@ -1,3 +1,5 @@
+import 'package:firapplicationdigtitalcampus/controller/firestorehelper.dart';
+import 'package:firapplicationdigtitalcampus/librairie/constatnte.dart';
 import 'package:firapplicationdigtitalcampus/view/list_personne.dart';
 import 'package:firapplicationdigtitalcampus/view/messagerie.dart';
 import 'package:firapplicationdigtitalcampus/view/mydarwer.dart';
@@ -19,6 +21,18 @@ class _DashBoardState extends State<DashBoard> {
   PageController pageIndex = PageController();
 
   //////////
+
+  @override
+  void initState() {
+    String uid = FirestoreHelper().getId();
+    FirestoreHelper().getUtilisateur(uid).then((value) {
+      setState(() {
+        monIdentite = value;
+      });
+
+    });
+    super.initState();
+  }
 
 
 

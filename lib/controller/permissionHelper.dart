@@ -24,11 +24,11 @@ class PermissionHelper{
 
   Future<PermissionStatus>checkStorageAndroid(PermissionStatus status) async{
     switch(status){
-      case PermissionStatus.permanentlyDenied : return Permission.storage.request().then((value) => checkStorageAndroid(value));
+      case PermissionStatus.permanentlyDenied : return Future.error("L'accès des photos est refusé");
       case PermissionStatus.denied : return Permission.storage.request().then((value) => checkStorageAndroid(value));
       case PermissionStatus.restricted : return Permission.storage.request().then((value) => checkStorageAndroid(value));
-      case PermissionStatus.limited : return Future.error("Autoristion accepté");
-      case PermissionStatus.granted : return Future.error("Autoristion accepté");
+      case PermissionStatus.limited : return Permission.storage.request().then((value) => checkStorageAndroid(value));
+      case PermissionStatus.granted : return Permission.storage.request().then((value) => checkStorageAndroid(value));
       default: return Future.error("L'application n'a pas pu récupérer le statuts");
 
     }
@@ -38,11 +38,11 @@ class PermissionHelper{
 
   Future<PermissionStatus>checkPhotosIos(PermissionStatus status) async{
     switch(status){
-      case PermissionStatus.permanentlyDenied : return Permission.photos.request().then((value) => checkPhotosIos(value));
+      case PermissionStatus.permanentlyDenied : return Future.error("L'accès des photos est refusé");
       case PermissionStatus.denied : return Permission.photos.request().then((value) => checkPhotosIos(value));
       case PermissionStatus.restricted : return Permission.photos.request().then((value) => checkPhotosIos(value));
-      case PermissionStatus.limited : return Future.error("Autoristion accepté");
-      case PermissionStatus.granted : return Future.error("Autoristion accepté");
+      case PermissionStatus.limited : return Permission.photos.request().then((value) => checkPhotosIos(value));
+      case PermissionStatus.granted : return Permission.photos.request().then((value) => checkPhotosIos(value));
       default: return Future.error("L'application n'a pas pu récupérer le statuts");
 
     }
