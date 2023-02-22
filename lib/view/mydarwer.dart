@@ -1,7 +1,9 @@
+import 'dart:io';
 import 'dart:typed_data';
 
 import 'package:file_picker/file_picker.dart';
 import 'package:firapplicationdigtitalcampus/librairie/constatnte.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 
 class MyDrawer extends StatefulWidget {
@@ -20,6 +22,37 @@ class _MyDrawerState extends State<MyDrawer> {
 
   //fonctions
   popImage(){
+    showDialog(context: context,
+        builder: (context){
+      if(Platform.isIOS){
+        return CupertinoAlertDialog(
+          title: const Text("Mon image"),
+          content: Image.memory(datasImage!),
+          actions: [
+            TextButton(
+              onPressed: (){
+                Navigator.pop(context);
+              },
+              child: const Text("Refuser"),
+            ),
+
+            TextButton(
+              onPressed: (){
+
+
+                Navigator.pop(context);
+              },
+              child: const Text("Accepter"),
+            ),
+          ],
+        );
+      }
+      else
+        {
+
+        }
+        }
+    );
 
   }
 
