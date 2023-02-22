@@ -25,6 +25,11 @@ class _DashBoardState extends State<DashBoard> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      drawer: Container(
+        width: MediaQuery.of(context).size.width/2,
+        height:MediaQuery.of(context).size.height,
+        child : MyDrawer()
+      ),
       appBar: AppBar(),
       body: bodyPage(),
       bottomNavigationBar: BottomNavigationBar(
