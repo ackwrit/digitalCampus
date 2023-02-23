@@ -13,6 +13,7 @@ class FirestoreHelper{
   final auth = FirebaseAuth.instance;
   final storage = FirebaseStorage.instance;
   final firebaseUsers = FirebaseFirestore.instance.collection("UTILISATEURS");
+  final firebaseMessages = FirebaseFirestore.instance.collection("MESSAGES");
 
 
 
@@ -48,6 +49,9 @@ class FirestoreHelper{
   addUsers(String identifiant, Map<String,dynamic> dictionnaire){
     firebaseUsers.doc(identifiant).set(dictionnaire);
 }
+  addMessage(String identifiant, Map<String,dynamic> dictionnaire) {
+    firebaseMessages.doc(identifiant).set(dictionnaire);
+  }
 
 
 //récuperer l'identifiant de l'utilisateur

@@ -34,6 +34,21 @@ class _ListPersonneState extends State<ListPersonne> {
                     }
                   else {
                     return ListTile(
+                      onTap: (){
+                        Map<String,dynamic> map = {
+                          "SENDER": monIdentite.id,
+                          //"RECEIVER":,
+                          "DATE": DateTime.now(),
+                          "CONTENTU":" ",
+                        };
+                        //String uid = randomString(20);
+                        //FirestoreHelper().addMessage(uid, map);
+                        //Navigator.push(context, MaterialPageRoute(
+                           // builder: (context){
+                             // return Nouvelle(utilisateur:otherUser);
+                           // }
+                        //));
+                      },
                       leading: CircleAvatar(
                         backgroundImage: NetworkImage(otherUser.avatar!),
                       ),
