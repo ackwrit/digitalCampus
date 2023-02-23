@@ -19,6 +19,7 @@ class Message {
     contenu = map ["CONTENU"];
     Timestamp timestamp = map ["DATE"];
     date = timestamp.toDate();
+    isRead =  map["ISREAD"];
 
   }
 }
