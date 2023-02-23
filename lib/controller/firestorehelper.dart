@@ -66,6 +66,12 @@ Future <Utilisateur> getUtilisateur(String identifiant) async {
     return Utilisateur(snapshot);
 }
 
+//fonction quitter
+  logout() async {
+     await auth.signOut();
+
+  }
+
 
 //Supression d'un utilisateur
 deleteUser(){

@@ -3,6 +3,7 @@ import 'package:firapplicationdigtitalcampus/librairie/constatnte.dart';
 import 'package:firapplicationdigtitalcampus/view/list_personne.dart';
 import 'package:firapplicationdigtitalcampus/view/messagerie.dart';
 import 'package:firapplicationdigtitalcampus/view/mydarwer.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
@@ -46,7 +47,17 @@ class _DashBoardState extends State<DashBoard> {
         color: Colors.white,
         child : MyDrawer()
       ),
-      appBar: AppBar(),
+
+      appBar: AppBar(
+        actions: [
+          IconButton(
+              onPressed: (){
+                FirestoreHelper().logout();
+              },
+              icon: const Icon(Icons.logout)
+          )
+        ],
+      ),
       body: bodyPage(),
       bottomNavigationBar: BottomNavigationBar(
         onTap: (value){
